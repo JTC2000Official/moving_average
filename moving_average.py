@@ -9,7 +9,9 @@ class MovingAverage():
 
     def addSample(self, value):
         self.samples.append(value)
-        if self.samples == self.N
+        if len(self.samples) > self.N:
+            self.samples[-1]
+
     def getAverage(self):
         if len(self.samples) < self.N:
             return sum(self.samples)/len(self.samples)
