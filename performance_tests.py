@@ -1,12 +1,12 @@
-
+import moving_average
 import timeit
 
-mysetup = """
+mysetup = '''
 import moving_average
 module = moving_average.MovingAverage(N)
 for i in range(100):
     module.addSample(i)
-"""
+'''
 
 mysetup2 = """
 module = moving_average.MovingAverage(N)
@@ -28,6 +28,7 @@ def test_addsample_withoutSamples(N):
 """
 
 def test_addsample_withSamples(N):
+    module = moving_average.MovingAverage(N)
     module.addSample(N)
 
 def test_getAverage(N):
@@ -37,6 +38,7 @@ def test_getAverage_and_addsample(N):
     module = moving_average.MovingAverage(N)
 
 if __name__ == "__main__":
+    import timeit
     print(timeit.repeat(stmt=test, setup=mysetup))
     """
     print(timeit.timeit(stmt="test_addsample_withoutSamples(100)"))
