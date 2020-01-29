@@ -1,0 +1,18 @@
+START pseudokode
+klasse MovingAverage():
+    instansfunktion INIT(self,N):
+        self.N = N
+        self.samples = liste
+
+    instansfunktion addSample(self, tal):
+        self.samples.tilføj(tal)
+        hvis længde af self.samples > self.N:
+            self.samples.FjernFørsteIListe
+        Returnér self.samples
+    
+    instansfunktion getAvereage(self):
+        hvis længde af self.samples < self.N:
+            Returnér (summen af self.samples) / (længden af self.samples)
+        ellers:
+            Returnér (summen af self.samples) / self.N
+SLUT pseudokode
